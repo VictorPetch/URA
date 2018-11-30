@@ -1,25 +1,42 @@
-#include "Ultrassom.h"
+#include "ULTRASSOM.h"
 #include "Servo.h"
-int pos = 0;
+int pos = 20;
 // Pin do trig e echo 
 Ultrassom us(3,2); 
 Servo myservo;
 void setup() {
+  int Reading[10] = {};
   Serial.begin(9600); 
   us.setup(); 
-  myservo.attach(4);
+  //myservo.attach(4);
 }
 
 void loop() {
-  //70 = 90graus
-  
-  for (pos = 10; pos <= 130; pos += 20) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);
-    Serial.println(us.dist());// tell servo to go to position in variable 'pos'
-    delay(2000);                       // waits 15ms for the servo to reach the position
-  }
-     
-    
-    
+   
+ 
+      //myservo.write(pos); Tell servo to go to position pos
+      Serial.println(us.dist()); //returns distance 
+      delay(200);                        
+      
 }
+  
+
+/*     
+        delay(200);
+    myservo.write(pos);
+    delay(200);
+    Serial.print("Angle: ");
+    Serial.println(pos);
+    Serial.println(us.dist())
+    Serial.println(us.dist());
+    Serial.println(us.dist());
+
+    Serial.println("Ja era");
+    delay(2000);
+*/
+    
+
+
+ //70 = 90graus
+  
+  //

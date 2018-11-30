@@ -1,9 +1,9 @@
-#include "Ultrassom.h"
+#include "ULTRASSOM.h"
 
 Ultrassom::Ultrassom(int t, int e) {
   trigPin = t;
   echoPin = e;
-  timeOut = 6000; // 3000 µs = 50cm // 30000 µs = 5 m
+  timeOut = 6000; // 3000 s = 50cm // 30000 s = 5 m
 }
 
 long Ultrassom::tempo() {
